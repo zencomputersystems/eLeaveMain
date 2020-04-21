@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -18,3 +18,12 @@ import { LoginPage } from './login.page';
   declarations: [LoginPage]
 })
 export class LoginPageModule {}
+
+export class LoginAppSharedModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: LoginPageModule,
+      providers: []
+    };
+  }
+}

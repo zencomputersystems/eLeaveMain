@@ -1,3 +1,6 @@
+import { Router } from '@angular/router';
+import { AuthService } from './../projects/user/src/services/shared-service/auth.service';
+import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 export interface UserOptions {
@@ -20,7 +23,9 @@ export class LoginPage implements OnInit {
   public errorLogin = false;
   public submitted = false;
   // crypto = require('crypto-js');
-  constructor() { }
+  constructor(
+    private loginAuth: AuthService, private router: Router,
+  ) { }
 
   ngOnInit() {
     console.log(localStorage.getItem('email'));
@@ -31,4 +36,26 @@ export class LoginPage implements OnInit {
     }
   }
 
+  async onLogin(loginForm: NgForm) {
+    this.submitted = true;
+    if (loginForm.valid) {
+
+      console.log('onLogin loginForm: ' + JSON.stringify(loginForm, null, ' '));
+      await this.loginAuth.login(this.userLogin.email, this.userLogin.password).subscribe(
+        data => {
+          console.log('on after login api:' + JSON.stringify(data, null, ''));
+          this.errorLogin = false;
+          if (data.access_token) {
+            localStorage.setItem('access_token', JSON.stringify(data.access_token));
+            this.router.navigate(['main']);
+          }
+        },
+        error => {
+          this.errorMsg = (error.statusText === 'Unauthorized') ? 'Invalid Credential' : error.statusText;
+          this.errorLogin = true;
+
+        }
+      );
+    }
+  }
 }
