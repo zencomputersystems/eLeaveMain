@@ -13,14 +13,17 @@ export class AuthService {
   public ROOT_URL = 'http://zencore.zen.com.my:3000';
 
   public jwtHelper: JwtHelperService = new JwtHelperService();
-  
+
   constructor(
     private apiService: ApiService
   ) { }
 
   login(emailValue: string, passwordValue: string) {
-    const encryptPass = (this.CryptoJS.SHA256(passwordValue)).toString(this.CryptoJS.enc.Hex);
-    return this.apiService.postApiLogin({ loginId: emailValue, password: encryptPass }, '/api/auth/login/local').pipe(
+    // const encryptPass = (this.CryptoJS.SHA256(passwordValue)).toString(this.CryptoJS.enc.Hex);
+    // return this.apiService.postApiLogin({ loginId: emailValue, password: encryptPass }, '/api/auth/login/local').pipe(
+    console.log(emailValue)
+    console.log(passwordValue)
+    return this.apiService.postApiLogin({ email: emailValue, password: passwordValue }, '/api/auth/login').pipe(
       map(data => {
         return data;
       })

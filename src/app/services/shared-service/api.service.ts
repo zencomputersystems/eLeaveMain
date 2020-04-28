@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  public ROOT_URL = 'http://zencore.zen.com.my:3001';
+  public ROOT_URL = 'http://zencore.zen.com.my:3000';
 
   public headers = new Headers();
   constructor(
