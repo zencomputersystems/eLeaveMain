@@ -6,7 +6,7 @@ import { UserSharedModule } from './projects/user/src/app/app.module';
 // import { SideMenuUserSharedModule } from './projects/user/src/app/side-menu-navigation/side-menu-navigation.module';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'testPage', pathMatch: 'full' },
+  { path: '', redirectTo: 'users', pathMatch: 'full' },
   {
     path: 'testPage',
     loadChildren: '../app/projects/sampleapp1/src/app/app.module.ts#SampleApp1SharedModule'
@@ -15,15 +15,19 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'users', loadChildren: () => import('../app/projects/user/src/app/app.module').then(m=>m.AppModule)
+    // path: 'users', loadChildren: '../app/projects/user/src/app/app.module.ts'
+  },
+  {
+    path: 'admins', loadChildren: () => import('../app/projects/admin/src/app/app.module').then(m=>m.AppModule)
+  }
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, useHash: true }),
     SampleApp1SharedModule.forRoot(),
-    // SideMenuUserSharedModule.forRoot()
-    // UserSharedModule.forRoot(),
-    // AdminSharedModule.forRoot()
   ],
   exports: [RouterModule]
 })
