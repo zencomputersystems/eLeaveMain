@@ -6,14 +6,17 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run copy:assets && npm run copy:theme && npm run copy:global && ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "doc:build": "npx compodoc -p tsconfig.json",
     "doc:serve": "npx compodoc -p tsconfig.json -s",
     "postinstall": "link-module-alias",
-    "preinstall": "command -v link-module-alias && link-module-alias clean || true"
+    "preinstall": "command -v link-module-alias && link-module-alias clean || true",
+    "copy:assets": "rm -rf src/assets && cp -r './src/app/projects/user/src/assets' 'src/assets'",
+    "copy:theme": "rm -rf src/theme && cp -r './src/app/projects/user/src/theme' 'src/theme'",
+    "copy:global": "rm -rf global.scss && cp -r './src/app/projects/user/src/global.scss' 'src/global.scss'"
   },
   "_moduleAliases": {
     "@user/*": [
