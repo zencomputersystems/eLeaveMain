@@ -4,14 +4,15 @@ import { SampleApp1SharedModule } from './projects/sampleapp1/src/app/app.module
 // import { SideMenuUserSharedModule } from './projects/user/src/app/side-menu-navigation/side-menu-navigation.module';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'users', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: 'testPage',
     loadChildren: '../app/projects/sampleapp1/src/app/app.module.ts#SampleApp1SharedModule'
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    // loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('../app/projects/user/src/app/app.module').then(m => m.AppModule)
   },
   {
     path: 'users', loadChildren: () => import('../app/projects/user/src/app/app.module').then(m=>m.AppModule)
