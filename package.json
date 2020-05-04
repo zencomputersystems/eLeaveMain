@@ -19,10 +19,10 @@
     "copy:global": "rm -rf global.scss && cp -r './src/app/projects/user/src/global.scss' 'src/global.scss'"
   },
   "_moduleAliases": {
-    "@user/*": [
+    "~user/*": [
       "src/app/projects/user/src/*"
     ],
-    "@admin/*": [
+    "~admin/*": [
       "src/app/projects/admin/src/*"
     ]
   },
