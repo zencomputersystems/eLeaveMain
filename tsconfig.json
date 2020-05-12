@@ -7,7 +7,7 @@
     "declaration": false,
     "module": "esnext",
     "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata": false,
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
@@ -19,8 +19,8 @@
       "dom"
     ],
     "paths": {
-      "~user/*": ["src/app/projects/user/src/*"],
-      "~admin/*": ["src/app/projects/admin/src/*"]
+      "user/*": ["src/app/projects/user/src/*"],
+      "admin/*": ["src/app/projects/admin/src/*"]
     }
   }, 
   "angularCompilerOptions": {
