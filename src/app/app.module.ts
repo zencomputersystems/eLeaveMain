@@ -25,7 +25,7 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule,
     HttpClientModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   providers: [
     StatusBar,
