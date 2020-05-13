@@ -14,9 +14,9 @@
     "doc:serve": "npx compodoc -p tsconfig.json -s",
     "postinstall": "link-module-alias",
     "preinstall": "command -v link-module-alias && link-module-alias clean || true",
-    "copy:assets": "rm -rf src/assets && cp -r './src/app/projects/user/src/assets' 'src/assets' && cp -r './src/app/projects/admin/src/assets' 'src/assets'",
-    "copy:theme": "rm -rf src/theme && cp -r './src/app/projects/user/src/theme' 'src/theme' && cp -r './src/app/projects/admin/src/theme' 'src/theme'",
-    "copy:global": "rm -rf global.scss && cp -r './src/app/projects/user/src/global.scss' 'src/global.scss' && cp -r './src/app/projects/admin/src/global.scss' 'src/global.scss'"
+    "copy:assets": "rm -rf src/assets && cp -r src/app/projects/user/src/assets src/assets && cp -r src/app/projects/admin/src/assets/* src/assets",
+    "copy:theme": "rm -rf src/theme && cp -r src/app/projects/user/src/theme src/theme && cp -r src/app/projects/admin/src/theme/* src/theme",
+    "copy:global": "rm -rf src/global.scss && cp -r './src/app/projects/user/src/global.scss' 'src/global.scss' && cp -r './src/app/projects/admin/src/global.scss' 'src/global.scss'"
   },
   "_moduleAliases": {
     "user/*": [
@@ -124,7 +124,7 @@
     "stream": "0.0.2",
     "ts-node": "~8.9.0",
     "tslint": "~6.1.1",
-    "typescript": "^3.8.3"
+    "typescript": "~3.8.3"
   },
   "description": "An eLeave Main Project"
 }
