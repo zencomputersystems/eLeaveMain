@@ -19,12 +19,9 @@
     "copy:global": "rm -rf src/global.scss && cp -r './src/app/projects/user/src/global.scss' 'src/global.scss' && cp -r './src/app/projects/admin/src/global.scss' 'src/global.scss'"
   },
   "_moduleAliases": {
-    "user/*": [
-      "src/app/projects/user/src/*"
-    ],
-    "admin/*": [
-      "src/app/projects/admin/src/*"
-    ]
+    "root": "./",
+    "user": "./src/app/projects/user/src",
+    "admin": "./src/app/projects/admin/src"
   },
   "private": true,
   "dependencies": {
@@ -44,8 +41,8 @@
     "@bugsnag/plugin-angular": "^7.0.0",
     "@bugsnag/plugin-express": "^7.0.0",
     "@capacitor/android": "^2.0.1",
-    "@capacitor/cli": "^2.0.1",
-    "@capacitor/core": "^2.0.1",
+    "@capacitor/cli": "^2.1.0",
+    "@capacitor/core": "^2.1.0",
     "@fullcalendar/angular": "^4.4.5-beta",
     "@fullcalendar/core": "^4.2.0",
     "@fullcalendar/daygrid": "^4.2.0",
@@ -64,6 +61,8 @@
     "angular-web-storage": "^9.0.0",
     "angular2-uuid": "^1.1.1",
     "bootstrap": "^4.3.1",
+    "codemod-cli": "^2.1.0",
+    "cordova-android": "8.1.0",
     "cordova-plugin-ionic": "^5.0.3",
     "core-js": "^3.6.5",
     "file-saver": "^2.0.2",
@@ -86,9 +85,11 @@
     "ngx-material-timepicker": "^5.5.1",
     "ngx-pagination": "^5.0.0",
     "ngx-spinner": "^9.0.2",
+    "postinstall": "^0.7.0",
     "primeng": "^9.0.5",
     "promise-polyfill": "^8.1.3",
     "quill": "^1.3.6",
+    "relative-to-alias": "^2.0.1",
     "rxjs": "^6.5.5",
     "rxjs-compat": "^6.5.5",
     "tslib": "^1.10.0",
@@ -109,7 +110,14 @@
     "@types/jasmine": "~3.5.10",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
+    "babel-plugin-module-resolver": "^4.0.0",
     "codelyzer": "^5.1.2",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.2.0",
+    "cordova-plugin-ionic-webview": "^4.2.1",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-whitelist": "^1.3.3",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.1",
     "karma": "~5.0.2",
@@ -126,5 +134,20 @@
     "tslint": "~6.1.1",
     "typescript": "~3.8.3"
   },
-  "description": "An eLeave Main Project"
+  "description": "An eLeave Main Project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {
+        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+      },
+      "cordova-plugin-ionic-keyboard": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
 }
