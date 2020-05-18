@@ -24,8 +24,8 @@ ${ADMINDIR}/package.json:
 	git clone https://github.com/zencomputersystems/eLeave_admin-V3.git ${USERDIR}
 
 clean: 
-	rm -rf ${USERDIR}/*
-	rm -rf ${ADMINDIR}/*
+	rm -rf ${USERDIR}
+	rm -rf ${ADMINDIR}
 	rm -rf node_modules
 	rm -rf package-lock.json
 
