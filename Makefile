@@ -21,7 +21,7 @@ ${USERDIR}/package.json:
 	git clone https://github.com/zencomputersystems/eleave-v3.git ${USERDIR}
 
 ${ADMINDIR}/package.json:
-	git clone https://github.com/zencomputersystems/eLeave_admin-V3.git ${USERDIR}
+	git clone https://github.com/zencomputersystems/eLeave_admin-V3.git ${ADMINDIR}
 
 clean: 
 	rm -rf ${USERDIR}
