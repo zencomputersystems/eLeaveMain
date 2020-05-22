@@ -13,8 +13,7 @@ generate: ${ADMINDIR}/package.json ${USERDIR}/package.json
 	@echo -e "\e[1;32m Building project...\e[0m"
 	ionic build
 
-run: admin user
-	@echo -e "\e[1,32m Running project...\e[0m"
+run: @echo -e "\e[1,32m Running project...\e[0m"
 	ionic serve
         
 ${USERDIR}/package.json:
