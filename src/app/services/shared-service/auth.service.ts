@@ -10,7 +10,7 @@ export class AuthService {
 
   CryptoJS = require('crypto-js');
 
-  public ROOT_URL = 'http://zencore.zen.com.my:3000';
+  public ROOT_URL = 'https://zencore.zen.com.my:3000';
 
   public jwtHelper: JwtHelperService = new JwtHelperService();
 

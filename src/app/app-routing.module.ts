@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { SampleApp1SharedModule } from './projects/sampleapp1/src/app/app.module';
-import { AppModule } from 'admin/app/app.module';
+// import { AppModule } from '/admin/app/app.module';
+// import {} from 'admin/sr'
 // import { SideMenuUserSharedModule } from './projects/user/src/app/side-menu-navigation/side-menu-navigation.module';
 
 const routes: Routes = [

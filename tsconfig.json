@@ -19,9 +19,9 @@
       "dom"
     ],
     "paths": {
-      "root": ["./"],
-      "user": ["./src/app/projects/user/src"],
-      "admin": ["./src/app/projects/admin/src"]
+      "$root": ["./"],
+      "$user-root": ["./src/app/projects/user"],
+      "$admin-root": ["./src/app/projects/admin"]
     }
   }, 
   "angularCompilerOptions": {
