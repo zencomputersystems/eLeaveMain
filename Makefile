@@ -9,24 +9,22 @@ USERDIR = src/app/projects/user
 reqs:= $(foreach exec,$(EXECUTABLES),\
         $(if $(shell which $(exec)), some string,$(error "No $(exec) in PATH")))
 
-generate: admin user
+generate: ${ADMINDIR}/package.json ${USERDIR}/package.json
 	@echo -e "\e[1;32m Building project...\e[0m"
 	ionic build
 
-run: admin user
-	@echo -e "\e[1,32m Running project...\e[0m"
+run: @echo -e "\e[1,32m Running project...\e[0m"
 	ionic serve
         
-admin: ${ADMINDIR}/package.json
-	@echo -e "\e[1;32m Building admin module...\e[0m"
-	cd ${ADMINDIR} && npm i && ionic build
-
-user: ${USERDIR}/package.json
-	@echo -e "\e[1;32m Building user module...\e[0m"
-	cd ${USERDIR} && npm i && ionic build
-
 ${USERDIR}/package.json:
-	cd ${USERDIR} && git clone https://github.com/zencomputersystems/eleave-v3.git .
+	git clone https://github.com/zencomputersystems/eleave-v3.git ${USERDIR}
 
 ${ADMINDIR}/package.json:
-	cd ${ADMINDIR} && git clone https://github.com/zencomputersystems/eLeave_admin-V3.git .
+	git clone https://github.com/zencomputersystems/eLeave_admin-V3.git ${ADMINDIR}
+
+clean: 
+	rm -rf ${USERDIR}
+	rm -rf ${ADMINDIR}
+	rm -rf node_modules
+	rm -rf package-lock.json
+
