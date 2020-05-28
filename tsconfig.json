@@ -11,6 +11,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
+    "types": ["node"],
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -19,9 +20,9 @@
       "dom"
     ],
     "paths": {
-      "root": ["./"],
-      "user": ["./src/app/projects/user/src"],
-      "admin": ["./src/app/projects/admin/src"]
+      "$root": ["./"],
+      "$user-root": ["./src/app/projects/user"],
+      "$admin-root": ["./src/app/projects/admin"]
     }
   }, 
   "angularCompilerOptions": {
