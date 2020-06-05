@@ -6,15 +6,15 @@ const routes: Routes = [
   { path: '', redirectTo: 'users', pathMatch: 'full' },
   {
     path: 'login',
-    loadChildren: () => import('./projects/user/src/app/app.module').then(m => m.AppModule)
+    loadChildren: () => import('$user-root/src/app/app.module').then(m => m.AppModule)
     // loadChildren: () => import('$user-root/src/app/app.module').then(m => m.AppModule)
   },
   {
-    path: 'users', loadChildren: () => import('./projects/user/src/app/app.module').then(m=>m.AppModule)
+    path: 'users', loadChildren: () => import('$user-root/src/app/app.module').then(m=>m.AppModule)
     // path: 'users', loadChildren: () => import('$user-root/src/app/app.module').then(m=>m.AppModule)
    },
   {
-    path: 'admins', loadChildren: () => import('./projects/admin/src/app/app.module').then(m=>m.AppModule)
+    path: 'admins', loadChildren: () => import('$admin-root/src/app/app.module').then(m=>m.AppModule)
     // path: 'admins', loadChildren: () => import('$admin-root/src/app/app.module').then(m=>m.AppModule)
   }
 ];
