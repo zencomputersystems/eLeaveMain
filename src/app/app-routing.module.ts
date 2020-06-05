@@ -10,11 +10,11 @@ const routes: Routes = [
     // loadChildren: () => import('$user-root/src/app/app.module').then(m => m.AppModule)
   },
   {
-    path: 'users', loadChildren: () => import('$user-root/src/app/app.module').then(m=>m.AppModule)
+    path: 'users', loadChildren: () => import('$user-root/src/app/app.module').then(m => m.AppModule)
     // path: 'users', loadChildren: () => import('$user-root/src/app/app.module').then(m=>m.AppModule)
    },
   {
-    path: 'admins', loadChildren: () => import('$admin-root/src/app/app.module').then(m=>m.AppModule)
+    path: 'admins', loadChildren: () => import('$admin-root/src/app/app.module').then(m => m.AppModule)
     // path: 'admins', loadChildren: () => import('$admin-root/src/app/app.module').then(m=>m.AppModule)
   }
 ];
