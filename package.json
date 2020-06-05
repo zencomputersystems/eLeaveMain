@@ -20,9 +20,9 @@
   },
   "private": true,
   "_moduleAliases": {
-    "$root": "./",
-    "$user-root": "./src/app/projects/user",
-    "$admin-root": "./src/app/projects/admin"
+    "$root/*": "./*",
+    "$user-root/*": "./src/app/projects/user/*",
+    "$admin-root/*": "./src/app/projects/admin/*"
   },
   "dependencies": {
     "@angular/animations": "^9.1.2",

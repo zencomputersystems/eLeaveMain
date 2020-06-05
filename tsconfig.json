@@ -20,10 +20,10 @@
       "dom"
     ],
     "paths": {
-      "$root": ["./"],
-      "$user-root": ["./src/app/projects/user"],
-      "$admin-root": ["./src/app/projects/admin"]
-    }
+      "$root/*": ["./*"],
+      "$user-root/*": ["./src/app/projects/user/*"],
+      "$admin-root/*": ["./src/app/projects/admin/*"]
+    },
   }, 
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
