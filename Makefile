@@ -11,6 +11,7 @@ reqs:= $(foreach exec,$(EXECUTABLES),\
 
 generate: ${ADMINDIR}/package.json ${USERDIR}/package.json
 	@echo -e "\e[1;32m Building project...\e[0m"
+	update update-all all
 	ionic build
 
 run: @echo -e "\e[1,32m Running project...\e[0m"
@@ -28,3 +29,11 @@ clean:
 	rm -rf node_modules
 	rm -rf package-lock.json
 
+update:
+	git pull origin master
+	git submodule update --init
+
+update-all: update
+	git submodule foreach git pull origin master
+
+all: update-all
