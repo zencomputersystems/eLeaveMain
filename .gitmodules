@@ -1,6 +1,3 @@
-[submodule "src/app/projects/sampleapp1"]
-	path = src/app/projects/sampleapp1
-	url = https://github.com/hananiii/project1
 [submodule "src/app/projects/user"]
 	path = src/app/projects/user
 	url = https://github.com/zencomputersystems/eleave-v3
