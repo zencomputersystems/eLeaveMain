@@ -71,7 +71,7 @@
     "ionic-angular": "^3.9.10",
     "iso3166-2-db": "^2.3.4",
     "json2csv": "^5.0.0",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "jspdf-autotable": "^3.2.13",
     "jszip": "^3.2.2",
     "jwt-decode": "^2.2.0",
